@@ -44,10 +44,10 @@ const useNovoCursoFormulario = (handleClose, cursoSelecionado) => {
             //fazer a requisição post ou put, dependendo do caso
             if (cursoSelecionado) {
                 // Se um curso selecionado existir, atualize-o (requisição PUT)
-                await axios.put(`http://127.0.0.1:8000/cursos/${cursoSelecionado.cur_id}/`, adjustedData);
+                await axios.put(`https://gabi-makeup-api-2e0d.onrender.com/v1/cursos/${cursoSelecionado.cur_id}/`, adjustedData);
             } else {
                 // Caso contrário, crie um novo curso (requisição POST)
-                await axios.post('http://127.0.0.1:8000/cursos/', adjustedData);
+                await axios.post('https://gabi-makeup-api-2e0d.onrender.com/v1/cursos/', adjustedData);
             }
 
             // Defina a mensagem de sucesso

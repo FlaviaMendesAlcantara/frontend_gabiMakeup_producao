@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b78adc45.css",
+    "main.js": "/static/js/main.da5196a7.js",
+    "static/media/MaquiagemMadura.jpg": "/static/media/MaquiagemMadura.41d1f3103383837b7205.jpg",
+    "static/media/MaquiagemDia.jpg": "/static/media/MaquiagemDia.b6a25dd0e064bf99a1bc.jpg",
+    "static/media/maquiagemLeve.jpg": "/static/media/maquiagemLeve.7d8a6a8fca2dcecc2f0b.jpg",
+    "static/media/autoMaquiagem.jpg": "/static/media/autoMaquiagem.e90cf72920ae69e1f292.jpg",
+    "static/media/MaquiagemMadrinha.jpg": "/static/media/MaquiagemMadrinha.c91ef1dd1b374c44a6a2.jpg",
+    "static/media/olhoEsfumado.jpg": "/static/media/olhoEsfumado.0d64145b3a2674024e8e.jpg",
+    "static/media/Gabriela.jpg": "/static/media/Gabriela.99901be9cdd5df0f8b26.jpg",
+    "static/media/maquiagemFesta.jpg": "/static/media/maquiagemFesta.810cadb12d7efab51f68.jpg",
+    "index.html": "/index.html",
+    "main.b78adc45.css.map": "/static/css/main.b78adc45.css.map",
+    "main.da5196a7.js.map": "/static/js/main.da5196a7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b78adc45.css",
+    "static/js/main.da5196a7.js"
+  ]
+}
