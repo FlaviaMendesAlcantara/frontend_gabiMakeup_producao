@@ -31,7 +31,7 @@ const useInscricaoForm = (handleClose,curso) => { // Adicionei handleClose como 
             // Dados válidos, prosseguir com o envio
             console.log('Dados do formulário:', data);
             try {
-                const response = await axios.post('http://127.0.0.1:8000/inscricoes/', {
+                const response = await axios.post('https://gabi-makeup-api-2e0d.onrender.com/v1/inscricoes/', {
                     ins_nome_completo: data.nome,
                     ins_data_nascimento: data.dataNascimento,
                     ins_numero_telefone: data.telefone,

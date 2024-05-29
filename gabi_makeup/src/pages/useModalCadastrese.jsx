@@ -25,7 +25,7 @@ const useModalCadastrese = () => {
             console.log('Dados do formulário:', data);
             try {
                 // Buscar o perfil de usuário com o nome "usuário padrão"
-                const perfisResponse = await axios.get('http://127.0.0.1:8000/perfis/');
+                const perfisResponse = await axios.get('https://gabi-makeup-api-2e0d.onrender.com/v1/perfis/');
                 const usuarioPadraoPerfil = perfisResponse.data.find(perfil => perfil.per_nome === 'usuário padrão');
                 
                 if (!usuarioPadraoPerfil) {
@@ -33,7 +33,7 @@ const useModalCadastrese = () => {
                     return;
                 }
                 console.log(usuarioPadraoPerfil.per_id);
-                const response = await axios.post('http://127.0.0.1:8000/usuarios/', {
+                const response = await axios.post('https://gabi-makeup-api-2e0d.onrender.com/v1/usuarios/', {
                     usu_usuario: data.usuario,
                     usu_nome_completo: data.nomeCompleto,
                     password: data.senha,

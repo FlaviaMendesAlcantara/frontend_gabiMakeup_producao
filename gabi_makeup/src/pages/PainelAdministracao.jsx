@@ -18,7 +18,7 @@ function PainelAdminstracao() {
     useEffect(() => {
       async function fetchCursos() {
         try {
-          const response = await axios.get('http://127.0.0.1:8000/cursos/');
+          const response = await axios.get('https://gabi-makeup-api-2e0d.onrender.com/v1/cursos/');
           setCursos(response.data);
         } catch (error) {
           console.error('Erro ao buscar cursos:', error);
