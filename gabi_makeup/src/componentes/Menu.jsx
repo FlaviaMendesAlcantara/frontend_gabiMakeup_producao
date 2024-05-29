@@ -41,28 +41,30 @@ function Menu() {
           <Nav.Link as={Link} to="/galeria" className="menu-link">Galeria</Nav.Link>
           <Nav.Link as={Link} to="/cursos" className="menu-link">Catálogo de Cursos</Nav.Link>
           <Nav.Link as={Link} to="/tutoriais" className="menu-link">Tutoriais</Nav.Link>
-          {showAdminPanel && ( 
+          {showAdminPanel && (
             <Nav.Link as={Link} to="/painel" className="menu-link">Painel de Administração</Nav.Link>
           )}
-          <div>
-          </div>
         </Nav>
-        
-        <Link to="/login" style={{marginLeft: 'auto'}}>
-          <Button variant='light' className="botao-entrar">Entrar</Button>
-        </Link>
-
-        <Nav>
-          <Nav.Link>
-            <SocialIcon network="instagram"  onClick={handleInstagramClick} style={{ height: 35, width: 35 }} />
-          </Nav.Link>
-          <Nav.Link>
-            <SocialIcon network="whatsapp" onClick={handleWhatsappClick} style={{ height: 35, width: 35 }}/>
-          </Nav.Link>
-          <Nav.Link>
-            <SocialIcon network="tiktok" onClick={handleTiktokClick} style={{ height: 35, width: 35 }}/>
-          </Nav.Link>
-        </Nav> 
+        <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center' }}>
+          {userLoggedIn ? (
+            <span className="logged-in-message">Bem-vindo de volta!</span>
+          ) : (
+            <Link to="/login">
+              <Button variant='light' className="botao-entrar">Entrar</Button>
+            </Link>
+          )}
+          <Nav>
+            <Nav.Link>
+              <SocialIcon network="instagram" onClick={handleInstagramClick} style={{ height: 35, width: 35 }} />
+            </Nav.Link>
+            <Nav.Link>
+              <SocialIcon network="whatsapp" onClick={handleWhatsappClick} style={{ height: 35, width: 35 }} />
+            </Nav.Link>
+            <Nav.Link>
+              <SocialIcon network="tiktok" onClick={handleTiktokClick} style={{ height: 35, width: 35 }} />
+            </Nav.Link>
+          </Nav>
+        </div>
       </Navbar.Collapse>
     </Navbar>
   );
