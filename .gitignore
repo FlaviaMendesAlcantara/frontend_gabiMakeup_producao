@@ -1,0 +1,8 @@
+# Arquivos temporários
+*.tmp
+
+# Diretório de dependências
+node_modules/
+
+# Arquivos de configuração local
+.env
