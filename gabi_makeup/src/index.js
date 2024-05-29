@@ -5,12 +5,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <GoogleOAuthProvider clientId="605974124094-p01vlvb6gre32t3c2ddk7agvps03r4e5.apps.googleusercontent.com">
+ReactDOM.render(  
     <React.StrictMode>
-      <App />
-    </React.StrictMode>,
-  </GoogleOAuthProvider>,
+      <GoogleOAuthProvider clientId="179419466627-4ph0us4edk6rt2hdf0no6vpugu0r4aik.apps.googleusercontent.com">
+        <App />
+      </GoogleOAuthProvider>
+    </React.StrictMode> ,
   document.getElementById('root')
 );
 

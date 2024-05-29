@@ -3,12 +3,13 @@ import { makeStyles, createTheme, ThemeProvider } from '@material-ui/core/styles
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
-import { GoogleLogin } from '@react-oauth/google';
 import ModalCadastrese from './ModalCadastrese';
 import axios from 'axios';
 //import bcrypt from 'bcryptjs';
 import { useAuth } from '../contexto/useAuth';
 import { useHistory } from 'react-router-dom';
+import { GoogleLogin } from '@react-oauth/google';
+import { jwtDecode } from "jwt-decode";
 
 // import FacebookLogin from 'react-facebook-login';
 // import { blue } from '@material-ui/core/colors';
@@ -58,15 +59,7 @@ const useStyles = makeStyles((theme) => ({
   googleButton: {
     marginTop: theme.spacing(2),
   },
-  // ffacebookButton: {
-  //   marginTop: theme.spacing(2),
-  //   '& .facebook-login-button': {
-  //     width: '100%', // Defina a largura desejada
-  //     padding: theme.spacing(1),
-  //     color:blue
-  //     // Adicione outros estilos conforme necessário
-  //   },
-  // },
+
 }));
 
 function Login() {
@@ -74,6 +67,7 @@ function Login() {
   const [cadastreseOpen, setCadastreseOpen] = useState(false);
   const { setUserLoggedIn, setUserIsAdmin } = useAuth();
   const [errorMessage, setErrorMessage] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const classes = useStyles();
 
@@ -89,22 +83,18 @@ function Login() {
     event.preventDefault();
   
     const formData = new FormData(event.target);
-   // const plainPassword = formData.get('Senha');
-    //const hashedPassword = await bcrypt.hash(plainPassword, 10);
 
-    console.log('form '+JSON.stringify(formData));
     const data = {
       usu_usuario: formData.get('Usuário'),
       password: formData.get('Senha'),
     };
-  
-    console.log('Dados enviados para o servidor:', data); 
-  
+    
     try {
       const response = await axios.post('https://gabi-makeup-api-2e0d.onrender.com/v1/usuarios/authenticate/', data);
       console.log('Resposta do servidor:', response.data); 
 
       setUserLoggedIn(true);
+      setIsLoggedIn(true);
       if (response.data.perfil_usuario.per_nome === 'Administrador') {
         setUserIsAdmin(true);
       }
@@ -122,14 +112,6 @@ function Login() {
   const responseMessage = (response) => {
     console.log(response);
   };
-  // const errorMessage = (error) => {
-  //   console.log(error);
-  // };
-
-  // const responseFacebook = (response) => {
-  //   // Aqui você pode lidar com a resposta do login com o Facebook
-  //   console.log(response);
-  // };
 
   return (
     <ThemeProvider theme={theme}>
@@ -147,8 +129,20 @@ function Login() {
               </Button>
             </Box>
             
-            <Box className={classes.googleButton}>
-              <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
+            <Box className={classes.googleButton}>              
+              <GoogleLogin
+                onSuccess={credentialResponse => {
+                  const decoded = jwtDecode(credentialResponse?.credential);
+                  setUserLoggedIn(true);
+                  setIsLoggedIn(true);
+                  console.log(isLoggedIn)
+                  history.push('/home');
+                  console.log(decoded);
+                }}
+                onError={() => {
+                  console.log('Login Failed');
+                }}
+              />;
             </Box>
 
             <Box>
@@ -163,16 +157,6 @@ function Login() {
                 {errorMessage}
               </Box>
             )}
-
-            {/* <Box className={classes.facebookButton}>
-              <FacebookLogin
-                appId="Seu-ID-do-Facebook"
-                autoLoad={false}
-                fields="name,email,picture"
-                callback={responseFacebook}
-                cssClass="facebook-login-button"
-              />
-            </Box>  */}
           </form>
         </Box>
       </Box>

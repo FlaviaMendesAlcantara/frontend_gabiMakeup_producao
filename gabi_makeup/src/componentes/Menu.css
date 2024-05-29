@@ -35,3 +35,8 @@
     color: white !important;
   }
   
+.logged-in-message {
+    font-weight: bold;
+    margin-right: 15px;
+  }
+  

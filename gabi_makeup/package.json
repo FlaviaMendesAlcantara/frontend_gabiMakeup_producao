@@ -17,6 +17,7 @@
         "cypress": "^13.6.0",
         "date-fns": "^3.6.0",
         "firebase": "^10.8.1",
+        "jwt-decode": "^4.0.0",
         "react": "^16.8.0",
         "react-bootstrap": "^2.10.0",
         "react-bootstrap-table-next": "^4.0.3",
