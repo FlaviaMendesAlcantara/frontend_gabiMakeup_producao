@@ -7,6 +7,7 @@ import { PhotoItem } from '../componentes/PhotoItem/index.tsx';
 import { listAll, ref } from 'firebase/storage';
 import { storage } from '../libs/firebase.ts';
 import { useAuth } from '../contexto/useAuth.jsx';
+import { CircularProgress } from '@material-ui/core';
 
 function Galeria() {
     const { userLoggedIn, userIsAdmin } = useAuth();
@@ -120,7 +121,10 @@ function Galeria() {
                 {loading &&
                     <C.ScreenWarnings>
                         <div className="emoji">🤚</div>
-                        <div>Carregando...</div>
+                        <div>Aguarde...</div>
+                        <div className="loading-indicator">
+                            <CircularProgress />
+                        </div>
                     </C.ScreenWarnings>
                 }
 

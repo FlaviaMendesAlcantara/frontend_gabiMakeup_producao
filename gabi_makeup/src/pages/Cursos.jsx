@@ -6,6 +6,7 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import "../Cursos.css";
 import maquiagemIcon from "../img/autoMaquiagem.jpg"; 
 import InscricaoForm from "./InscricaoForm.jsx";
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 /**
  * Componente funcional que representa a página de cursos.
@@ -17,6 +18,7 @@ function Cursos() {
   const [cursosData, setCursosData] = useState([]);
   const [inscricaoOpen, setInscricaoOpen] = useState(false);
   const [cursoSelecionado, setCursoSelecionado] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchCursos() {
@@ -32,6 +34,8 @@ function Cursos() {
         setCursosData(cursosFormatted);
       } catch (error) {
         console.error('Erro ao buscar os cursos:', error);
+      }finally {
+        setLoading(false); 
       }
     }
 
@@ -52,63 +56,66 @@ function Cursos() {
   // };
 
   return (
-    <div className="cursos-container"> 
-
-      {/* // No componente Cursos.jsx
-    <Modal show={modalAberto} onHide={handleFecharModal}>
-      <Modal.Header closeButton>
-        <Modal.Title>Criar Novo Curso</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <NovoCursoFormulario handleClose={handleFecharModal} />
-      </Modal.Body>
-    </Modal> */}
-      
+    <div className="cursos-container">       
       <h1>Cursos Disponíveis</h1>
-      <ul className="cursos-list">
-        {cursosData.map((curso) => (
-          <li key={curso.cur_id} className="curso-item">
-            <div className="curso-header">             
-              <img
-                src={maquiagemIcon}
-                alt="Ícone de Maquiagem"
-                className="maquiagem-icon"
-              />             
-            </div>
-            <div className="curso-content">
-              <h3>{curso.cur_titulo}</h3>
-              <p>{curso.cur_descricao}</p>               
-              <p>
-                <strong>Data do Curso:</strong> {curso.cur_data_inicio} até{" "}
-                {curso.cur_data_fim}
-              </p>
-              <p>
-                <strong>Carga Horária:</strong> {curso.cur_carga_horaria} hs
-              </p>
-              <p>
-                <strong>Valor do investimento:</strong> R${curso.cur_valor}
-              </p>
-            </div>
-            
-            <Button
-              onClick={() => handleInscricaoOpen(curso)}
-              variant="contained"
-              color="secondary"
-              endIcon={<ArrowForwardIcon />}
-            >
-              Inscreva-se agora
-            </Button>
 
-          </li>
-        ))}
-        
-        {/* Modal de inscrição */}
-        <InscricaoForm
-          open={inscricaoOpen}
-          handleClose={handleInscricaoClose}
-          curso={cursoSelecionado}
-        />
-      </ul>
+      {/* Indicador de carregamento */}
+      {loading && (
+        <>
+          <div className="emoji">🤚</div>
+          <div>Aguarde...</div>
+          <div className="loading-indicator">
+              <CircularProgress />
+          </div>
+        </>
+      )}
+
+      {!loading && (
+        <ul className="cursos-list">
+          {cursosData.map((curso) => (
+            <li key={curso.cur_id} className="curso-item">
+              <div className="curso-header">             
+                <img
+                  src={maquiagemIcon}
+                  alt="Ícone de Maquiagem"
+                  className="maquiagem-icon"
+                />             
+              </div>
+              <div className="curso-content">
+                <h3>{curso.cur_titulo}</h3>
+                <p>{curso.cur_descricao}</p>               
+                <p>
+                  <strong>Data do Curso:</strong> {curso.cur_data_inicio} até{" "}
+                  {curso.cur_data_fim}
+                </p>
+                <p>
+                  <strong>Carga Horária:</strong> {curso.cur_carga_horaria} hs
+                </p>
+                <p>
+                  <strong>Valor do investimento:</strong> R${curso.cur_valor}
+                </p>
+              </div>
+              
+              <Button
+                onClick={() => handleInscricaoOpen(curso)}
+                variant="contained"
+                color="secondary"
+                endIcon={<ArrowForwardIcon />}
+              >
+                Inscreva-se agora
+              </Button>
+
+            </li>
+          ))}
+          
+          {/* Modal de inscrição */}
+          <InscricaoForm
+            open={inscricaoOpen}
+            handleClose={handleInscricaoClose}
+            curso={cursoSelecionado}
+          />
+        </ul>
+      )}
     </div>
   );
 }

@@ -6,6 +6,7 @@ import { VideoItem } from '../componentes/VideoItem/index.tsx';
 import { listAll, ref } from 'firebase/storage';
 import { storage } from '../libs/firebase.ts';
 import { useAuth } from '../contexto/useAuth.jsx';
+import { CircularProgress } from '@material-ui/core';
 
 function Tutorial() {
     const { userLoggedIn, userIsAdmin } = useAuth();
@@ -149,7 +150,10 @@ function Tutorial() {
                 {loading &&
                     <C.ScreenWarnings>
                         <div className="emoji">🤚</div>
-                        <div>Carregando...</div>
+                        <div>Aguarde...</div>
+                        <div className="loading-indicator">
+                            <CircularProgress />
+                        </div>
                     </C.ScreenWarnings>
                 }
 

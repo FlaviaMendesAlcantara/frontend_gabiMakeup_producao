@@ -6,7 +6,7 @@ import SobreMim from './pages/SobreMim';
 import Galeria from './pages/Galeria.tsx';
 import Cursos from './pages/Cursos';
 import Tutoriais from './pages/Tutorial.tsx';
-import Login from './pages/Login';
+import Login from './pages/Login'; 
 import Layout from './Layout.jsx';
 import PainelAdminstracao from './pages/PainelAdministracao.jsx';
 
