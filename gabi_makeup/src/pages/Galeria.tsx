@@ -121,7 +121,7 @@ function Galeria() {
                 {loading &&
                     <C.ScreenWarnings>
                         <div className="emoji">🤚</div>
-                        <div>Aguarde...</div>
+                        <div>Carregando...</div>
                         <div className="loading-indicator">
                             <CircularProgress />
                         </div>

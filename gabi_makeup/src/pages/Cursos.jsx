@@ -63,7 +63,7 @@ function Cursos() {
       {loading && (
         <>
           <div className="emoji">🤚</div>
-          <div>Aguarde...</div>
+          <div>Carregando...</div>
           <div className="loading-indicator">
               <CircularProgress />
           </div>
