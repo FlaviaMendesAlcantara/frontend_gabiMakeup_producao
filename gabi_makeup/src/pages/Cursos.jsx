@@ -24,7 +24,7 @@ function Cursos() {
   useEffect(() => {
     async function fetchCursos() {
       try {
-        const response = await axiosInstance.get('/v1/cursos/');
+        const response = await axiosInstance.get('/cursos/');
         const cursosFormatted = response.data
         .filter(curso => curso.cur_ativo) // Filtrando apenas cursos ativos
         .map(curso => ({
