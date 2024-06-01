@@ -6,7 +6,7 @@ import { Modal } from 'react-bootstrap';
 import TabelaInscricoes from './TabelaInscricoes'; 
 import TabelaCursos from './TabelaCursos'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import axios from 'axios';
+import axiosInstance from '../axios-instance.js';
 
 function PainelAdminstracao() {
   const [modalAberto, setModalAberto] = useState(false);
@@ -18,7 +18,7 @@ function PainelAdminstracao() {
     useEffect(() => {
       async function fetchCursos() {
         try {
-          const response = await axios.get('https://gabi-makeup-api-2e0d.onrender.com/v1/cursos/');
+          const response = await axiosInstance.get('/cursos/');
           setCursos(response.data);
         } catch (error) {
           console.error('Erro ao buscar cursos:', error);

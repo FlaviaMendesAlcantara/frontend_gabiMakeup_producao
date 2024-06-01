@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import axios from 'axios';
+import axiosInstance from '../axios-instance.js';
 import { zodResolver } from '@hookform/resolvers/zod';
 import '../InscricaoForm.css';
 import { schemaCadastroUsuario } from './InscricaoFormSchema';
@@ -25,7 +25,7 @@ const useModalCadastrese = () => {
             console.log('Dados do formulário:', data);
             try {
                 // Buscar o perfil de usuário com o nome "usuário padrão"
-                const perfisResponse = await axios.get('https://gabi-makeup-api-2e0d.onrender.com/v1/perfis/');
+                const perfisResponse = await axiosInstance.get('perfis/');
                 const usuarioPadraoPerfil = perfisResponse.data.find(perfil => perfil.per_nome === 'usuário padrão');
                 
                 if (!usuarioPadraoPerfil) {
@@ -33,7 +33,7 @@ const useModalCadastrese = () => {
                     return;
                 }
                 console.log(usuarioPadraoPerfil.per_id);
-                const response = await axios.post('https://gabi-makeup-api-2e0d.onrender.com/v1/usuarios/', {
+                const response = await axiosInstance.post('usuarios/', {
                     usu_usuario: data.usuario,
                     usu_nome_completo: data.nomeCompleto,
                     password: data.senha,

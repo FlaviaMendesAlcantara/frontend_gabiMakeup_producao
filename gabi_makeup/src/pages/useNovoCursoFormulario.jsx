@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { schemaNovoCurso } from './InscricaoFormSchema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import '../InscricaoForm.css';
-import axios from 'axios';
+import axiosInstance from '../axios-instance.js';
 
 const useNovoCursoFormulario = (handleClose, cursoSelecionado) => {
     const { register, handleSubmit, formState: { errors }, control, reset, setValue } = useForm({
@@ -40,14 +40,13 @@ const useNovoCursoFormulario = (handleClose, cursoSelecionado) => {
                 cur_data_fim: data.dtFinalCurso,
                 cur_data_exclusao: null // Se necessário, ajuste o valor para 'cur_data_exclusao'
             };
-
             //fazer a requisição post ou put, dependendo do caso
             if (cursoSelecionado) {
                 // Se um curso selecionado existir, atualize-o (requisição PUT)
-                await axios.put(`https://gabi-makeup-api-2e0d.onrender.com/v1/cursos/${cursoSelecionado.cur_id}/`, adjustedData);
+                await axiosInstance.put(`cursos/${cursoSelecionado.cur_id}/`, adjustedData);
             } else {
                 // Caso contrário, crie um novo curso (requisição POST)
-                await axios.post('https://gabi-makeup-api-2e0d.onrender.com/v1/cursos/', adjustedData);
+                await axiosInstance.post('cursos/', adjustedData);
             }
 
             // Defina a mensagem de sucesso

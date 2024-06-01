@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import axiosInstance from '../axios-instance.js';
 import { format } from 'date-fns';
 import { useTable, useFilters } from 'react-table';
 import './TabelaInscricoes.css'
@@ -13,7 +13,7 @@ function TabelaInscricoes() {
   useEffect(() => {
     async function fetchInscricoes() {
       try {
-        const response = await axios.get('https://gabi-makeup-api-2e0d.onrender.com/v1/inscricoes/');
+        const response = await axiosInstance.get('inscricoes/');
         setInscricoes(response.data);
       } catch (error) {
         console.error('Erro ao buscar inscrições:', error);
@@ -26,7 +26,7 @@ function TabelaInscricoes() {
   useEffect(() => {
     async function fetchCursos() {
       try {
-        const response = await axios.get('https://gabi-makeup-api-2e0d.onrender.com/v1/cursos/');
+        const response = await axiosInstance.get('cursos/');
         setCursos(response.data);
       } catch (error) {
         console.error('Erro ao buscar cursos:', error);

@@ -4,7 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
 import ModalCadastrese from './ModalCadastrese';
-import axios from 'axios';
+import axiosInstance from '../axios-instance.js';
 //import bcrypt from 'bcryptjs';
 import { useAuth } from '../contexto/useAuth';
 import { useHistory } from 'react-router-dom';
@@ -90,7 +90,7 @@ function Login() {
     };
     
     try {
-      const response = await axios.post('https://gabi-makeup-api-2e0d.onrender.com/v1/usuarios/authenticate/', data);
+      const response = await axiosInstance.get('usuarios/authenticate/', data);
       console.log('Resposta do servidor:', response.data); 
 
       setUserLoggedIn(true);
