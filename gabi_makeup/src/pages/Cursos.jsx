@@ -7,7 +7,7 @@ import "../Cursos.css";
 import maquiagemIcon from "../img/autoMaquiagem.jpg"; 
 import InscricaoForm from "./InscricaoForm.jsx";
 import CircularProgress from '@material-ui/core/CircularProgress';
-
+ 
 /**
  * Componente funcional que representa a página de cursos.
  * @return {JSX.Element} O componente JSX da página de cursos.

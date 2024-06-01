@@ -90,7 +90,7 @@ function Login() {
     };
     
     try {
-      const response = await axiosInstance.get('usuarios/authenticate/', data);
+      const response = await axiosInstance.post('usuarios/authenticate/', data);
       console.log('Resposta do servidor:', response.data); 
 
       setUserLoggedIn(true);
