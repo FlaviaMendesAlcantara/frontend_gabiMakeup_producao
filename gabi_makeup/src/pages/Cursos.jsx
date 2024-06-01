@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axiosInstance from '../axios-instance';
-import axios from 'axios';
 import { format } from 'date-fns'; 
 import Button from '@material-ui/core/Button';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
@@ -24,7 +23,11 @@ function Cursos() {
   useEffect(() => {
     async function fetchCursos() {
       try {
-        const response = await axiosInstance.get('/cursos/');
+        console.log('6',axiosInstance.get());
+        console.log('6',axiosInstance.get('cursos/'));
+
+        const response = await axiosInstance.get('cursos/');
+        console.log(response.data);
         const cursosFormatted = response.data
         .filter(curso => curso.cur_ativo) // Filtrando apenas cursos ativos
         .map(curso => ({
