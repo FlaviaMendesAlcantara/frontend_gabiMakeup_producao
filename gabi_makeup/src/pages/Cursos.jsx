@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axiosInstance from '../axios-instance.js';
+import axiosInstance from '../../axios-instance.js';
 import { format } from 'date-fns'; 
 import Button from '@material-ui/core/Button';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
