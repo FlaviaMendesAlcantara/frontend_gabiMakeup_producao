@@ -25,6 +25,7 @@ function Cursos() {
     async function fetchCursos() {
       try {
         const response = await axiosInstance.get('/v1/cursos/'); 
+        console.log(axiosInstance.get('/v1/cursos/'))
         const cursosFormatted = response.data
         .filter(curso => curso.cur_ativo) // Filtrando apenas cursos ativos
         .map(curso => ({
