@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import axiosInstance from '../axios-instance';
 import axios from 'axios';
 import { format } from 'date-fns'; 
 import Button from '@material-ui/core/Button';
@@ -23,7 +24,7 @@ function Cursos() {
   useEffect(() => {
     async function fetchCursos() {
       try {
-        const response = await axios.get('https://gabi-makeup-api-2e0d.onrender.com/v1/cursos/');
+        const response = await axiosInstance.get('/v1/cursos/');
         const cursosFormatted = response.data
         .filter(curso => curso.cur_ativo) // Filtrando apenas cursos ativos
         .map(curso => ({
