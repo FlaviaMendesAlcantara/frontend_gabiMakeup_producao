@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 // Verifique se as variáveis de ambiente estão definidas
-if (!process.env.REACT_APP_BASEURL || !process.env.REACT_APP_USERNAME || !process.env.REACT_APP_PASSW) {
+if (!process.env.REACT_APP_BASEURL || !process.env.REACT_APP_USERNAME || !process.env.REACT_APP_PASSWORD) {
   console.error('Missing environment variables. Please check your .env file or Vercel environment settings.');
 }
 
@@ -17,18 +17,18 @@ instance.interceptors.request.use(
   (config) => {
     // Adicionar lógica para adicionar cabeçalho de autenticação
     const username =process.env.REACT_APP_USERNAME;
-    const password = process.env.REACT_APP_PASSWORD;
+    const password = 'G@biM@keup';//process.env.REACT_APP_PASSWORD;
     const basicAuth = 'Basic ' + btoa(username + ':' + password); // Codifica para Base64
     config.headers.Authorization = basicAuth; // Adiciona o cabeçalho de autenticação a todas as solicitações
-    console.log('REACT_APP_BASEURL:', process.env.REACT_APP_BASEURL);
-    console.log('REACT_APP_USERNAME:', process.env.REACT_APP_USERNAME);
-    console.log('REACT_APP_PASSWORD:', process.env.REACT_APP_PASSWORD);
+    console.log('1 ',username);
+    console.log('2 ',password);
+    console.log('3 ',basicAuth);
+    console.log('4 ',process.env.REACT_APP_BASEURL);
+    console.log('5 ',config);
     return config;
   },
   (error) => {
-    console.log('REACT_APP_BASEURL:', process.env.REACT_APP_BASEURL);
-    console.log('REACT_APP_USERNAME:', process.env.REACT_APP_USERNAME);
-    console.log('REACT_APP_PASSWORD:', process.env.REACT_APP_PASSWORD);
+    console.log('error: ',error)
     return Promise.reject(error);
     
   }
