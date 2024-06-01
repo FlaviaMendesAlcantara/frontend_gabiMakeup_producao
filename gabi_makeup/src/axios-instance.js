@@ -20,9 +20,15 @@ instance.interceptors.request.use(
     const password = process.env.REACT_APP_PASSWORD;
     const basicAuth = 'Basic ' + btoa(username + ':' + password); // Codifica para Base64
     config.headers.Authorization = basicAuth; // Adiciona o cabeçalho de autenticação a todas as solicitações
+    console.log('REACT_APP_BASEURL:', process.env.REACT_APP_BASEURL);
+    console.log('REACT_APP_USERNAME:', process.env.REACT_APP_USERNAME);
+    console.log('REACT_APP_PASSWORD:', process.env.REACT_APP_PASSWORD);
     return config;
   },
   (error) => {
+    console.log('REACT_APP_BASEURL:', process.env.REACT_APP_BASEURL);
+    console.log('REACT_APP_USERNAME:', process.env.REACT_APP_USERNAME);
+    console.log('REACT_APP_PASSWORD:', process.env.REACT_APP_PASSWORD);
     return Promise.reject(error);
     
   }
