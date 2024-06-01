@@ -1,10 +1,14 @@
 // src/axios-instance.js
 import axios from 'axios';
 
+// Verifique se as variáveis de ambiente estão definidas
+if (!process.env.REACT_APP_BASEURL || !process.env.REACT_APP_USERNAME || !process.env.REACT_APP_PASSW) {
+  console.error('Missing environment variables. Please check your .env file or Vercel environment settings.');
+}
+
 // Configuração do Axios
 const instance = axios.create({
-  baseURL: 'https://gabi-makeup-api-2e0d.onrender.com/v1/',//process.env.REACT_APP_BASEURL, // URL base da sua API
-  
+  baseURL: process.env.REACT_APP_BASEURL, // URL base da sua API
 });
 
 // Adicionar interceptor para todas as solicitações
