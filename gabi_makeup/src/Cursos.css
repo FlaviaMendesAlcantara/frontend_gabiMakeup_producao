@@ -1,10 +1,12 @@
 .cursos-container {
     text-align: center;
+    background-color: aqua;
 }
 
 .cursos-list {
     list-style: none;
     padding: 0;
+    background-color: orange;
 }
     
 .curso-item {
@@ -16,6 +18,7 @@
     display: flex;
     align-items: center;    
     flex-direction: row;
+    background-color: greenyellow;
 }
 
 h1 {
@@ -31,20 +34,24 @@ p {
 }
 
 .maquiagem-icon {
+    background-color: yellow;
     width: 30%;
 }
 
 .curso-header {
+    background-color: red;
     display: flex;
     align-items: center;
 }
 
 .curso-content {
+    background-color: blue;
     margin-top: 1%; 
     margin-left: 8%;
 }
 
 .button-container {
+    background-color: purple;
     display: flex;
     justify-content: flex-start;
     margin-top: 10px;
