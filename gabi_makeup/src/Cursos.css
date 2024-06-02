@@ -43,12 +43,13 @@ p {
     display: flex;
     align-items: center;
     margin-left: 1px; /* Reduz o espaço à esquerda */
+    padding: 16px;
 }
 
 .curso-content {
     background-color: blue;
     margin-top: 1%; 
-    margin-left: 8%;
+    margin-left: 2%;
 }
 
 .button-container {
