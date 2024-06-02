@@ -17,7 +17,7 @@
     align-items: center;    
     flex-direction: row;
 }
-  /*  
+
 h1 {
     color: #333;
 }
@@ -28,15 +28,15 @@ h2 {
 
 p {
     color: #666;
-} */
+}
 
 .maquiagem-icon {
     background-color: red;
-    width: 300px;
-    height: 199px;
+    width: 120%;
+    height: 210px;
     margin-left: 10px;
 }
-/* 
+
 .curso-header {
     display: flex;
     align-items: center;
@@ -52,4 +52,4 @@ p {
     justify-content: flex-start;
     margin-top: 10px;
     margin-left: 10px; 
-} */
+}
