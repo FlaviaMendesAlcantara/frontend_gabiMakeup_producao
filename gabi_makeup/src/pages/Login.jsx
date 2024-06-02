@@ -10,7 +10,7 @@ import { useAuth } from '../contexto/useAuth';
 import { useHistory } from 'react-router-dom';
 import { GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from "jwt-decode";
-import { Axios } from 'axios';
+import axios from 'axios';
 
 // import FacebookLogin from 'react-facebook-login';
 // import { blue } from '@material-ui/core/colors';
@@ -91,7 +91,7 @@ function Login() {
     };
     
     try {
-      const response = await Axios.post('https://gabi-makeup-api-2e0d.onrender.com/v1/usuarios/authenticate/', data);
+      const response = await axios.post('https://gabi-makeup-api-2e0d.onrender.com/v1/usuarios/authenticate/', data);
       console.log('Resposta do servidor:', response.data); 
 
       setUserLoggedIn(true);
