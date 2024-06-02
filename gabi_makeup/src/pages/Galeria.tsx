@@ -123,7 +123,7 @@ function Galeria() {
                         <div>Acesse sua conta para visualizar as fotos</div>
                     </C.ScreenWarnings>
                 }
-                {userLoggedIn && loading &&
+                {userLoggedIn &&
                     photos && photos.length > 0 && (
                     <C.PhotoList>
                         {photos.map((item, index) => (
