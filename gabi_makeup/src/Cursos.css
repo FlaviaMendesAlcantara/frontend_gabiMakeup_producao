@@ -1,24 +1,21 @@
-.cursos-container {
+/* .cursos-container {
     text-align: center;
-    background-color: aqua;
 }
 
 .cursos-list {
     list-style: none;
     padding: 0;
-    background-color: orange;
 }
     
 .curso-item {
     border: 1px solid #ccc;
-    /* padding: 8px; */
-    /* margin: 16px 10px; */
+    padding: 16px;
+    margin: 16px 10px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;    
     flex-direction: row;
-    background-color: greenyellow;
 }
 
 h1 {
@@ -31,31 +28,28 @@ h2 {
 
 p {
     color: #666;
-}
+} */
 
 .maquiagem-icon {
-    background-color: yellow;
-    width: 30%;
-}
-
-.curso-header {
     background-color: red;
+    width: 300px;
+    height: 199px;
+    margin-left: 10px;
+}
+/* 
+.curso-header {
     display: flex;
     align-items: center;
-    margin-left: 1px; /* Reduz o espaço à esquerda */
-    padding: 1px;
 }
 
 .curso-content {
-    background-color: blue;
     margin-top: 1%; 
-    margin-left: 2%;
+    margin-left: 8%;
 }
 
 .button-container {
-    background-color: purple;
     display: flex;
     justify-content: flex-start;
     margin-top: 10px;
     margin-left: 10px; 
-}
+} */
