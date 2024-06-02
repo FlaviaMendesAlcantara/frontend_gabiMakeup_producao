@@ -43,7 +43,7 @@ p {
     display: flex;
     align-items: center;
     margin-left: 1px; /* Reduz o espaço à esquerda */
-    padding: 16px;
+    padding: 1px;
 }
 
 .curso-content {
