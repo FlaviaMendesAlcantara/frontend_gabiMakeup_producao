@@ -6,6 +6,7 @@ if (!process.env.REACT_APP_BASEURL || !process.env.REACT_APP_USERNAME || !proces
   console.error('Missing environment variables. Please check your .env file or Vercel environment settings.');
 }
 
+
 // Configuração do Axios
 const instance = axios.create({
   baseURL: process.env.REACT_APP_BASEURL, // URL base da sua API
