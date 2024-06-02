@@ -42,6 +42,7 @@ p {
     background-color: red;
     display: flex;
     align-items: center;
+    margin-left: 5px; /* Reduz o espaço à esquerda */
 }
 
 .curso-content {
