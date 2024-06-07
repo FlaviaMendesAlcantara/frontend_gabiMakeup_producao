@@ -2,9 +2,9 @@
 import axios from 'axios';
 
 // Verifique se as variáveis de ambiente estão definidas
-if (!process.env.REACT_APP_BASEURL || !process.env.REACT_APP_USERNAME || !process.env.REACT_APP_PASSWORD) {
-  console.error('Missing environment variables. Please check your .env file or Vercel environment settings.');
-}
+//if (!process.env.REACT_APP_BASEURL || !process.env.REACT_APP_USERNAME || !process.env.REACT_APP_PASSWORD) {
+ // console.error('Missing environment variables. Please check your .env file or Vercel environment settings.');
+//}
 
 
 // Configuração do Axios
