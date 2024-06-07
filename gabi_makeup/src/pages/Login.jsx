@@ -119,8 +119,8 @@ function Login() {
       <Box className={classes.root}>
         <Box className={classes.box}>
           <form className={classes.form} onSubmit={handleSubmit} noValidate autoComplete="off">
-            <TextField id="standard-basic" label="Usuário" name="Usuário"/>
-            <TextField id="standard-basic" label="Senha" type="password" name="Senha"/>
+            <TextField id="usuario-input" label="Usuário" name="Usuário"/>
+            <TextField id="senha-input" label="Senha" type="password" name="Senha"/>
             <Box className={classes.buttonGroup}>
               <Button type="submit" variant="contained" color="primary">
                 Entrar
