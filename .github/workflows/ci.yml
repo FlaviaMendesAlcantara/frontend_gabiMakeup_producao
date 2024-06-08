@@ -28,7 +28,7 @@ jobs:
       run: ls -la
 
     - name: Navigate to project directory
-      run: cd gabi_makeup || exit 1
+      run: cd frontend_gabimakeup_producao/gabi_makeup || exit 1
 
     - name: Print working directory after navigation
       run: pwd
