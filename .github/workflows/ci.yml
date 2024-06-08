@@ -36,9 +36,6 @@ jobs:
     - name: Install dependencies
       run: cd gabi_makeup && npm install --force
 
-    - name: Install Jest DOM testing library
-      run: cd gabi_makeup && npm install --save-dev @testing-library/jest-dom
-
     - name: Run tests
       run: cd gabi_makeup && npm test
 
