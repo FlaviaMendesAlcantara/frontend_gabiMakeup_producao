@@ -1,4 +1,4 @@
-# Meu Projeto
+# Frontend Site Gabi-Makeup
 
 Este é um projeto de site para maquiadoras.
 Nele é possivel publicar as fotos do seu trabalho, videos tutoriais, 
