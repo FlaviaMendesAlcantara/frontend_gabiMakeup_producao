@@ -24,6 +24,10 @@ jobs:
     - name: Print working directory
       run: pwd
 
+    - name: List contents of the project directory
+      run: ls -la gabi_makeup
+
+
     - name: List directory structure
       run: ls -la
 
