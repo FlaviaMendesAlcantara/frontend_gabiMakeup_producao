@@ -7,7 +7,7 @@ Permitir o usuario fazer inscrição em cursos. Permite tambem ao administrador 
 ## Como Usar
 
 1. Clone o repositório. 
-    git clone https://github.com/FlaviaMendesAlcantara/frontend_gabiMakeup_producao.git
+    `git clone https://github.com/FlaviaMendesAlcantara/frontend_gabiMakeup_producao.git`
 2. navegue ate a pasta  `cd frontend_gabiMakeup_producao\gabi_makeup` 
 3. Execute `npm install --force` para instalar as dependências.
 4. Execute `npm install -g vercel ` para instalar as dependências do vercel.
