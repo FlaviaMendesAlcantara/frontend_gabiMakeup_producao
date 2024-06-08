@@ -22,7 +22,7 @@ jobs:
         node-version: '18'
 
     - name: Navigate to project directory
-      run: cd frontend_gabiMakeup_producao/gabi_makeup
+      run: cd $GITHUB_WORKSPACE/frontend_gabiMakeup_producao/gabi_makeup
 
     - name: Install dependencies
       run: npm install --force
