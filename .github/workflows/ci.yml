@@ -22,7 +22,7 @@ jobs:
         node-version: '18'
 
     - name: Navigate to project directory
-      run: gabi_makeup
+      run: cd /gabi_makeup
 
     - name: Install dependencies
       run: npm install --force
