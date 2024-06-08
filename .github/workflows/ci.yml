@@ -21,8 +21,17 @@ jobs:
       with:
         node-version: '18'
 
+    - name: Print working directory
+      run: pwd
+
+    - name: List directory structure
+      run: ls -la
+
     - name: Navigate to project directory
-      run: cd frontend_gabiMakeup_producao/gabi_makeup
+      run: cd gabi_makeup || exit 1
+
+    - name: Print working directory after navigation
+      run: pwd
 
     - name: Install dependencies
       run: npm install --force
