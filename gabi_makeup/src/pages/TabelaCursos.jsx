@@ -13,6 +13,10 @@ function TabelaCursos({ cursos, onSave }) {
     setCursoSelecionado(curso);
     setModalAberto(true);
   };
+  
+  if(handleAbrirModal){
+    return true;
+  }
 
   const handleFecharModal = () => {
     setModalAberto(false);

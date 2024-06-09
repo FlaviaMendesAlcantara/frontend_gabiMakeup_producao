@@ -32,7 +32,7 @@ export const VideoItem = ({ url, name,description, onDelete ,isAdmin, isLoggedIn
                     <source src={url} type="video/mp4" />
                     Seu navegador não suporta vídeos HTML5.
                 </C.Video>
-                {isAdmin && isLoggedIn && <C.DeleteButton onClick={() => onDelete(name)}>Excluir</C.DeleteButton>}
+                {isAdmin && isLoggedIn && <C.DeleteButton onClick={handleDelete}>Excluir</C.DeleteButton>}
             </C.VideoWrapper>
         );
 }

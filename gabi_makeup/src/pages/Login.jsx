@@ -4,16 +4,12 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
 import ModalCadastrese from './ModalCadastrese';
-import axiosInstance from '../axios-instance.js';
-//import bcrypt from 'bcryptjs';
 import { useAuth } from '../contexto/useAuth';
 import { useHistory } from 'react-router-dom';
 import { GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from "jwt-decode";
 import axios from 'axios';
 
-// import FacebookLogin from 'react-facebook-login';
-// import { blue } from '@material-ui/core/colors';
 
 const theme = createTheme({
   palette: {
@@ -110,9 +106,7 @@ function Login() {
     }
   };  
 
-  const responseMessage = (response) => {
-    console.log(response);
-  };
+
 
   return (
     <ThemeProvider theme={theme}>

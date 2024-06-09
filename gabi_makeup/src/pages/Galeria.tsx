@@ -25,6 +25,7 @@ function Galeria() {
             setLoading(true);
             setPhotos(await Photos.getAll());
             setLoading(false);
+            
         }
         getPhotos();
     }, []);
@@ -39,6 +40,8 @@ function Galeria() {
             } catch (error) {
                 console.error("Erro ao excluir a foto:", error);
             }
+        }
+        if (imageFile) {
         }
     };
 

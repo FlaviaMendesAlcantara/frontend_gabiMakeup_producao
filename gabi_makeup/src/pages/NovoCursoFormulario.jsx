@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {  useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { Alert } from 'react-bootstrap';
 import '../InscricaoForm.css';
@@ -20,7 +20,7 @@ const NovoCursoFormulario = ({ handleClose, cursoSelecionado }) => {
             setValue('dtInicialCurso', cursoSelecionado.dtInicialCurso);
             setValue('dtFinalCurso', cursoSelecionado.dtFinalCurso);
         }
-    }, [cursoSelecionado]);
+    }, [cursoSelecionado,setValue]);
 
     return (
         <div className="modal-content">

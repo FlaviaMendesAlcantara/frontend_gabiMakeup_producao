@@ -40,6 +40,9 @@ function Tutorial() {
                 console.error("Erro ao excluir o vídeo:", error);
             }
         }
+        if(videoFile){
+            
+        }
     };
 
     // Função para verificar se o nome do video já está em uso

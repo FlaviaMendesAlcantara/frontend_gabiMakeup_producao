@@ -25,7 +25,7 @@ const useNovoCursoFormulario = (handleClose, cursoSelecionado) => {
             setValue('dtInicialCurso', cursoSelecionado.cur_data_inicio);
             setValue('dtFinalCurso', cursoSelecionado.cur_data_fim);
         }
-    }, [cursoSelecionado]);
+    }, [cursoSelecionado,setValue]);
 
     const onSubmitForm = async (data) => {
         try {
